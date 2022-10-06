@@ -1,0 +1,7 @@
+<launch>
+  <test test-name="test_common_config"
+        pkg="ros2_bridge"
+        type="test_config.py">
+    <param name="config_file" value="$(find ros2_bridge)/config/common.yaml"/>
+  </test>
+</launch>

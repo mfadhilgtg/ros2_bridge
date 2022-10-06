@@ -1,0 +1,11 @@
+<launch>
+  <arg name="robot_namespace" default="base1"/>
+  <arg name="robot_list" default="scout1"/>
+
+  <include file="$(find ros2_bridge)/launch/base.launch">
+    <arg name="robot_namespace" value="$(arg robot_namespace)"/>
+    <arg name="robot_list" value="$(arg robot_list)"/>
+    <arg name="suffix" value="_drone"/>
+  </include>
+
+</launch>

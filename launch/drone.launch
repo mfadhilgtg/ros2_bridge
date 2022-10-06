@@ -1,0 +1,39 @@
+<launch>
+  <arg name="robot_namespace" default="scout"/>
+  <arg name="base_namespace" default="base1"/>
+  <arg name="robot_list" default=""/>
+  <arg name="simulation" default="false"/>
+
+  <!-- TODO: Move this to core_capability -->
+  <param name="capability_group" value="CommBridge"/>
+
+  <!-- Launch bridge software -->
+  <include file="$(find ros2_bridge)/launch/robot.launch">
+    <arg name="robot_namespace" value="$(arg robot_namespace)"/>
+    <arg name="base_namespace" value="$(arg base_namespace)"/>
+    <arg name="robot_list" value="$(arg robot_list)"/>
+    <arg name="suffix" value="_drone"/>
+  </include>
+
+  <!-- Topic sync -->
+  <!--
+  <node pkg="master_sync_fkie"
+        type="master_sync"
+        name="master_sync">
+    <rosparam param="sync_hosts" subst_value="true">
+      - $(arg robot_namespace)
+      - gazebo
+    </rosparam>
+    <rosparam param="do_not_sync">
+      - '*'
+    </rosparam>
+    <!-/- TODO: Make this auto-generated -/->
+    <rosparam param="sync_topics" subst_value="true" if="$(arg simulation)">
+      - /clock
+      - /$(arg robot_namespace)/pose
+      - /$(arg robot_namespace)/goal
+    </rosparam>
+  </node>
+  -->
+
+</launch>

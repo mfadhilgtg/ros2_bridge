@@ -1,0 +1,19 @@
+<launch>
+  <arg name="robot_namespace" default="husky"/>
+  <arg name="node_name" default="ros2_bridge"/>
+  <arg name="config" doc="path to configuration file"/>
+  <arg name="common_config" default="$(find ros2_bridge)/config/common.yaml"/>
+  <arg name="use_jpl_mm" default="false"/>
+
+  <group ns="$(arg robot_namespace)">
+    <node pkg="ros2_bridge"
+          type="bridge_launcher.py"
+          name="$(arg node_name)"
+          respawn="true">
+      <param name="config_file" value="$(arg config)"/>
+      <param name="common_config_file" value="$(arg common_config)"/>
+      <param name="name" value="$(arg node_name)_worker"/>
+      <param name="use_jpl_mm" value="$(arg use_jpl_mm)"/>
+    </node>
+  </group>
+</launch>

@@ -1,0 +1,66 @@
+# This file is auto-generated. Do not edit.
+ros_bridge_subt:
+  ros__parameters:
+    topics_1_to_2:
+      default:
+        topic_names:
+        - copilot/communicator/dialogue_request/compressed
+        - diagnostics_agg/compressed
+        - graph_level_planner_node/current_goal_marker/compressed
+        - lamp/lamp_pose/compressed
+        - lamp/pose_merged/compressed
+        - map_level_planner_node/refined_path/compressed
+        - mission/state/compressed
+        - mission/status/compressed
+        - mobility_manager/current_path/compressed
+        - mobility_status/compressed
+        - move_base/GlobalPlanner/plan/compressed
+        - move_base/MPCPlannerROS/body_marker_traj/compressed
+        - move_base/current_goal/compressed
+        - move_base_planner/costmap/viz/costmap/compressed
+        - roadmap_local/marker/compressed
+        - spot_driver/active_mode/compressed
+        - telemetry/image/compressed/compressed
+        - telemetry/joint_states/compressed
+        - tf/compressed
+        - vehicle_status/compressed
+        - lamp/base_pose_graph_diff/ack
+        - roadmap/update/ack
+      reliable:
+        topic_names:
+        - artifact/compressed/reliable
+        - audio_rssi/keyed_value/compressed/reliable
+        - bt_rssi/keyed_value/compressed/reliable
+        - co2/keyed_value/compressed/reliable
+        - lamp/keyed_scans/compressed/reliable
+        - lamp/pose_graph_incremental/compressed/reliable
+        - roadmap/update_base/compressed/reliable
+        - uwb_frontend/range_measurements/compressed/reliable
+        - wifi_rssi/keyed_value/compressed/reliable
+    topics_2_to_1:
+      default:
+        topic_names:
+        - /_BASE_/comm_node_manager/status_agg/compressed
+        - /_BASE_/mission/state/compressed
+        - /_OTHER_ROBOTS_/lamp/pose_merged/compressed
+        - cmd_vel/compressed
+        - max_driver/fptp/compressed
+        - mission/command/compressed
+        - mission/follow_robot/compressed
+        - mission/heartbeat/compressed
+        - move_base_simple/goal/compressed
+        - spot_driver/mode/compressed
+        - spot_driver/tilt/compressed
+        - artifact/ack
+        - audio_rssi/keyed_value/ack
+        - bt_rssi/keyed_value/ack
+        - co2/keyed_value/ack
+        - lamp/keyed_scans/ack
+        - lamp/pose_graph_incremental/ack
+        - roadmap/update_base/ack
+        - uwb_frontend/range_measurements/ack
+        - wifi_rssi/keyed_value/ack
+      reliable:
+        topic_names:
+        - lamp/base_pose_graph_diff/compressed/reliable
+        - roadmap/update/compressed/reliable

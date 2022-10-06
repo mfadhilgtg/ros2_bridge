@@ -1,0 +1,45 @@
+ros_bridge_subt:
+  ros__parameters:
+    robots:
+      - scout1
+    substitutions:
+      base:
+        - base1
+      # all_robots: <all robots in the list>
+      # other_robots: <robots except me>
+    topics_1_to_2:
+      default:
+        # topic_names: []
+        ros1_type_name: sensor_msgs/CompressedImage
+        ros2_type_name: sensor_msgs/msg/CompressedImage
+        history: KEEP_LAST
+        durability: VOLATILE
+        reliability: BEST_EFFORT
+        queue_size: 1
+        lifespan: 0.0
+      reliable:
+        # topic_names: []
+        ros1_type_name: sensor_msgs/CompressedImage
+        ros2_type_name: sensor_msgs/msg/CompressedImage
+        history: KEEP_ALL
+        durability: TRANSIENT_LOCAL
+        reliability: RELIABLE
+        queue_size: 4000  # ignored in ROS2 when using KEEP_ALL, used in ROS1
+        lifespan: 0.0
+    topics_2_to_1:
+      default:
+        # topic_names: []
+        ros1_type_name: sensor_msgs/CompressedImage
+        ros2_type_name: sensor_msgs/msg/CompressedImage
+        history: KEEP_LAST
+        durability: VOLATILE
+        reliability: BEST_EFFORT
+        queue_size: 1
+      reliable:
+        # topic_names: []
+        ros1_type_name: sensor_msgs/CompressedImage
+        ros2_type_name: sensor_msgs/msg/CompressedImage
+        history: KEEP_ALL
+        durability: TRANSIENT_LOCAL
+        reliability: RELIABLE
+        queue_size: 4000  # ignored in ROS2 when using KEEP_ALL, used in ROS1

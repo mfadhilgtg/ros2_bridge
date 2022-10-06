@@ -1,0 +1,41 @@
+<launch>
+  <arg name="robot_namespace" default="husky1"/>
+  <arg name="suffix" default=""/>
+  <arg name="common_config" default="$(find ros2_bridge)/config/common$(arg suffix).yaml"/>
+  <arg name="master_config" default="$(find ros2_bridge)/config/master$(arg suffix).yaml"/>
+
+  <arg name="ack_timeout" default="60.0"/>
+  <arg name="queue_status_publish_interval" default="1.0"/>
+  
+  <env name="ROSCONSOLE_FORMAT" value="[${severity}] [${time}] [${node}]: ${message}"/>
+
+  <!-- launch-prefix="gdb -\-batch -\-return-child-result -ex run -ex backtrace -\-args" -->
+  <!-- launch-prefix="xterm -e valgrind -\-log-file=/tmp/VALGRIND_OUTPUT -\-tool=memcheck" -->
+
+  <!-- robot_to_base_ -->
+  <node pkg="comm_data_reporter"
+        type="bundle_data_sender"
+        name="bundle_data_reporter_sender"
+        respawn="false">
+    <param name="robot_namespace" value="$(arg robot_namespace)"/>
+    <param name="common_config" value="$(arg common_config)"/>
+    <param name="master_config" value="$(arg master_config)"/>
+    <param name="topic_types" value="robot_to_base_reliable"/>
+    
+    <param name="ack_timeout" value="$(arg ack_timeout)"/>
+    <param name="publish_queue_status" value="true"/>
+    <param name="queue_status_publish_interval" value="$(arg queue_status_publish_interval)"/>
+  </node>
+
+  <!-- base_to_robot -->
+  <node pkg="comm_data_reporter"
+        type="bundle_data_receiver"
+        name="bundle_data_reporter_receiver"
+        respawn="false">
+    <param name="robot_namespace" value="$(arg robot_namespace)"/>
+    <param name="common_config" value="$(arg common_config)"/>
+    <param name="master_config" value="$(arg master_config)"/>
+    <param name="topic_types" value="base_to_robot_reliable"/>
+  </node>
+
+</launch>

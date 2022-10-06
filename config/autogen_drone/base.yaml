@@ -1,0 +1,20 @@
+# This file is auto-generated. Do not edit.
+ros_bridge_subt:
+  ros__parameters:
+    topics_1_to_2:
+      default:
+        topic_names:
+        - /_ALL_ROBOTS_/cmd_vel/compressed
+        - /_ALL_ROBOTS_/drone_behavior/compressed
+        - /_ALL_ROBOTS_/move_base_simple/goal/compressed
+    topics_2_to_1:
+      default:
+        topic_names:
+        - /_ALL_ROBOTS_/global_mapper_ros/cost_grid/compressed
+        - /_ALL_ROBOTS_/global_mapper_ros/occupancy_grid_marker_topic/compressed
+        - /_ALL_ROBOTS_/global_mapper_ros/unknown_grid_marker_topic/compressed
+        - /_ALL_ROBOTS_/pose/compressed
+        - /_ALL_ROBOTS_/primitives/compressed
+        - /_ALL_ROBOTS_/telemetry/camera_info/compressed
+        - /_ALL_ROBOTS_/telemetry/image/compressed/compressed
+        - /_ALL_ROBOTS_/tf/compressed

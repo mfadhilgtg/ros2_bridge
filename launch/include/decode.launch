@@ -1,0 +1,21 @@
+<launch>
+  <arg name="robot_namespace"/>
+  <arg name="type"/>
+  <arg name="output"/>
+  <arg name="input" default="$(arg output)/compressed"/>
+  <arg name="suffix" default=""/>
+
+  <arg name="escaped_topic" value="$(eval input.replace('/', '_').replace('_compressed', ''))"/>
+
+  <group ns="$(arg robot_namespace)">
+    <!-- Decompress (actual work is done in an external node) -->
+    <rosparam ns="decompress$(arg suffix)/topics/$(arg escaped_topic)" subst_value="true">
+      topic_type: $(arg type)
+      input: $(arg input)
+      output: $(arg output)
+      queue_size: 4000
+      max_rate_Hz: 20
+    </rosparam>
+  </group>
+
+</launch>

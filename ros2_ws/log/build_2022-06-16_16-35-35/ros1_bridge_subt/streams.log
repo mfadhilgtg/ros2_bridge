@@ -1,0 +1,22 @@
+[0.022s] Invoking command in '/home/costar/ccirm_ws/src/full/comm_ros2_bridge/ros2_ws/build/ros1_bridge_subt': CMAKE_PREFIX_PATH=/opt/ros/dashing:${CMAKE_PREFIX_PATH} HISTTIMEFORMAT=[%F %T] ~~~ PROMPT_COMMAND=if [ \\$? -ne 0 ]; then ERROR_FLAG=1; else ERROR_FLAG=; fi; promptPWD; history -a; _loghistory; __PREV_HISTCMD=vcs import < workspace_tools/nebula_addition.yaml __PREV_HISTLINE=208318 /usr/bin/cmake --build /home/costar/ccirm_ws/src/full/comm_ros2_bridge/ros2_ws/build/ros1_bridge_subt
+[0.038s] make[3]: warning: jobserver unavailable: using -j1.  Add '+' to parent make rule.
+[0.115s] [100%] Built target static_bridge
+[0.129s] Invoked command in '/home/costar/ccirm_ws/src/full/comm_ros2_bridge/ros2_ws/build/ros1_bridge_subt' returned '0': CMAKE_PREFIX_PATH=/opt/ros/dashing:${CMAKE_PREFIX_PATH} HISTTIMEFORMAT=[%F %T] ~~~ PROMPT_COMMAND=if [ \\$? -ne 0 ]; then ERROR_FLAG=1; else ERROR_FLAG=; fi; promptPWD; history -a; _loghistory; __PREV_HISTCMD=vcs import < workspace_tools/nebula_addition.yaml __PREV_HISTLINE=208318 /usr/bin/cmake --build /home/costar/ccirm_ws/src/full/comm_ros2_bridge/ros2_ws/build/ros1_bridge_subt
+[0.163s] Invoking command in '/home/costar/ccirm_ws/src/full/comm_ros2_bridge/ros2_ws/build/ros1_bridge_subt': CMAKE_PREFIX_PATH=/opt/ros/dashing:${CMAKE_PREFIX_PATH} HISTTIMEFORMAT=[%F %T] ~~~ PROMPT_COMMAND=if [ \\$? -ne 0 ]; then ERROR_FLAG=1; else ERROR_FLAG=; fi; promptPWD; history -a; _loghistory; __PREV_HISTCMD=vcs import < workspace_tools/nebula_addition.yaml __PREV_HISTLINE=208318 /usr/bin/cmake --build /home/costar/ccirm_ws/src/full/comm_ros2_bridge/ros2_ws/build/ros1_bridge_subt --target install
+[0.178s] make[3]: warning: jobserver unavailable: using -j1.  Add '+' to parent make rule.
+[0.244s] [100%] Built target static_bridge
+[0.267s] [36mInstall the project...[0m
+[0.278s] -- Install configuration: ""
+[0.279s] -- Up-to-date: /home/costar/ccirm_ws/src/full/comm_ros2_bridge/ros2_ws/install/ros1_bridge_subt/lib/ros1_bridge_subt/static_bridge
+[0.279s] -- Up-to-date: /home/costar/ccirm_ws/src/full/comm_ros2_bridge/ros2_ws/install/ros1_bridge_subt/share/ament_index/resource_index/package_run_dependencies/ros1_bridge_subt
+[0.279s] -- Up-to-date: /home/costar/ccirm_ws/src/full/comm_ros2_bridge/ros2_ws/install/ros1_bridge_subt/share/ament_index/resource_index/parent_prefix_path/ros1_bridge_subt
+[0.280s] -- Up-to-date: /home/costar/ccirm_ws/src/full/comm_ros2_bridge/ros2_ws/install/ros1_bridge_subt/share/ros1_bridge_subt/environment/ament_prefix_path.sh
+[0.280s] -- Up-to-date: /home/costar/ccirm_ws/src/full/comm_ros2_bridge/ros2_ws/install/ros1_bridge_subt/share/ros1_bridge_subt/environment/path.sh
+[0.280s] -- Up-to-date: /home/costar/ccirm_ws/src/full/comm_ros2_bridge/ros2_ws/install/ros1_bridge_subt/share/ros1_bridge_subt/local_setup.bash
+[0.280s] -- Up-to-date: /home/costar/ccirm_ws/src/full/comm_ros2_bridge/ros2_ws/install/ros1_bridge_subt/share/ros1_bridge_subt/local_setup.sh
+[0.280s] -- Up-to-date: /home/costar/ccirm_ws/src/full/comm_ros2_bridge/ros2_ws/install/ros1_bridge_subt/share/ros1_bridge_subt/local_setup.zsh
+[0.281s] -- Up-to-date: /home/costar/ccirm_ws/src/full/comm_ros2_bridge/ros2_ws/install/ros1_bridge_subt/share/ament_index/resource_index/packages/ros1_bridge_subt
+[0.281s] -- Up-to-date: /home/costar/ccirm_ws/src/full/comm_ros2_bridge/ros2_ws/install/ros1_bridge_subt/share/ros1_bridge_subt/cmake/ros1_bridge_subtConfig.cmake
+[0.281s] -- Up-to-date: /home/costar/ccirm_ws/src/full/comm_ros2_bridge/ros2_ws/install/ros1_bridge_subt/share/ros1_bridge_subt/cmake/ros1_bridge_subtConfig-version.cmake
+[0.281s] -- Up-to-date: /home/costar/ccirm_ws/src/full/comm_ros2_bridge/ros2_ws/install/ros1_bridge_subt/share/ros1_bridge_subt/package.xml
+[0.284s] Invoked command in '/home/costar/ccirm_ws/src/full/comm_ros2_bridge/ros2_ws/build/ros1_bridge_subt' returned '0': CMAKE_PREFIX_PATH=/opt/ros/dashing:${CMAKE_PREFIX_PATH} HISTTIMEFORMAT=[%F %T] ~~~ PROMPT_COMMAND=if [ \\$? -ne 0 ]; then ERROR_FLAG=1; else ERROR_FLAG=; fi; promptPWD; history -a; _loghistory; __PREV_HISTCMD=vcs import < workspace_tools/nebula_addition.yaml __PREV_HISTLINE=208318 /usr/bin/cmake --build /home/costar/ccirm_ws/src/full/comm_ros2_bridge/ros2_ws/build/ros1_bridge_subt --target install

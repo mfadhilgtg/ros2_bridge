@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<profiles>
+    <transport_descriptors>
+        <transport_descriptor>
+            <transport_id>veelpeers</transport_id> <!-- string -->
+            <type>UDPv4</type> <!-- string -->
+            <non_blocking_send>false</non_blocking_send>
+            <maxInitialPeersRange>10</maxInitialPeersRange> <!-- uint32 -->
+            <interfaceWhiteList>
+              <address>127.0.0.1</address>
+              <address>192.168.100.201</address>
+              <address>192.168.100.202</address>
+              <address>192.168.100.203</address>
+              <address>192.168.100.204</address>
+              <address>192.168.100.205</address>
+              <address>192.168.100.206</address>
+              <address>192.168.100.207</address>
+              <address>192.168.100.210</address>
+              <address>192.168.100.211</address>
+              <address>192.168.100.101</address>
+              <address>192.168.100.102</address>
+              <address>192.168.100.104</address>
+              <address>192.168.100.108</address>
+              <address>192.168.100.103</address>
+              <address>192.168.100.152</address>
+              <address>192.168.100.155</address>
+              <address>192.168.100.160</address>
+              <address>192.168.100.161</address>
+            </interfaceWhiteList>
+        </transport_descriptor>
+    </transport_descriptors>
+    <participant profile_name="participant_somename" is_default_profile="true">
+        <rtps>
+            <builtin>
+                <metatrafficUnicastLocatorList>
+                    <locator/>
+                </metatrafficUnicastLocatorList>
+                <domainId>4</domainId>
+                <!-- <initialAnnouncements>
+                  <count>2</count>
+                  <period>500</period>
+                </initialAnnouncements> -->
+                <leaseDuration>
+                    <sec>DURATION_INFINITY</sec>
+                </leaseDuration>
+                <leaseAnnouncement>
+                    <sec>1</sec>
+                </leaseAnnouncement>
+                <initialPeersList>
+                    <locator>
+                        <udpv4>
+                                <address>192.168.100.101</address> <!-- husky1 -->
+                        </udpv4>
+                    </locator>
+                    <locator>
+                        <udpv4>
+                                <address>192.168.100.102</address> <!-- husky2 -->
+                        </udpv4>
+                    </locator>
+                    <locator>
+                        <udpv4>
+                                <address>192.168.100.104</address> <!-- husky3 -->
+                        </udpv4>
+                    </locator>
+                    <locator>
+                        <udpv4>
+                                <address>192.168.100.108</address> <!-- husky4 -->
+                        </udpv4>
+                    </locator>
+                    <locator>
+                        <udpv4>
+                                <address>192.168.100.103</address> <!-- telemax1 -->
+                        </udpv4>
+                    </locator>
+                    <locator>
+                        <udpv4>
+                                <address>192.168.100.152</address> <!-- spot1 -->
+                        </udpv4>
+                    </locator>
+                    <locator>
+                        <udpv4>
+                                <address>192.168.100.155</address> <!-- spot2 -->
+                        </udpv4>
+                    </locator>
+                    <locator>
+                        <udpv4>
+                                <address>192.168.100.160</address> <!-- spot3 -->
+                        </udpv4>
+                    </locator>
+                    <locator>
+                        <udpv4>
+                                <address>192.168.100.161</address> <!-- spot4 -->
+                        </udpv4>
+                    </locator>
+                    <locator>
+                        <udpv4>
+                                <address>192.168.100.201</address> <!-- base1 -->
+                        </udpv4>
+                    </locator>
+                    <locator>
+                        <udpv4>
+                                <address>192.168.100.202</address> <!-- base2 -->
+                        </udpv4>
+                    </locator>
+                    <locator>
+                        <udpv4>
+                                <address>192.168.100.203</address> <!-- base3 -->
+                        </udpv4>
+                    </locator>
+                    <locator>
+                        <udpv4>
+                                <address>192.168.100.204</address> <!-- base4 -->
+                        </udpv4>
+                    </locator>
+                    <locator>
+                        <udpv4>
+                                <address>192.168.100.205</address> <!-- base5 -->
+                        </udpv4>
+                    </locator>
+                    <locator>
+                        <udpv4>
+                                <address>192.168.100.206</address> <!-- base6 -->
+                        </udpv4>
+                    </locator>
+                    <locator>
+                        <udpv4>
+                                <address>192.168.100.207</address> <!-- base7 -->
+                        </udpv4>
+                    </locator>
+                    <locator>
+                        <udpv4>
+                                <address>192.168.100.210</address> <!-- superbase1 -->
+                        </udpv4>
+                    </locator>
+                    <locator>
+                        <udpv4>
+                                <address>192.168.100.211</address> <!-- basejae -->
+                        </udpv4>
+                    </locator>
+                    <locator>
+                        <udpv4>
+                                <address>127.0.0.1</address>
+                        </udpv4>
+                    </locator>
+                </initialPeersList>
+            </builtin>
+            <userTransports>
+            <transport_id>veelpeers</transport_id>
+            </userTransports>
+            <useBuiltinTransports>false</useBuiltinTransports>
+        </rtps>
+    </participant>
+    <publisher profile_name="publisher_profile" is_default_profile="true">
+      <qos>
+        <publishMode>
+          <kind>ASYNCHRONOUS</kind>
+        </publishMode>
+        <reliability>
+          <max_blocking_time>
+            <sec>0</sec>
+            <nanosec>10000000</nanosec>
+          </max_blocking_time>
+        </reliability>
+      </qos>
+      <times>
+        <heartbeatPeriod>
+          <sec>1</sec>
+          <nanosec>0</nanosec>
+        </heartbeatPeriod>
+      </times>
+      <throughputController>
+        <bytesPerPeriod>2500000</bytesPerPeriod> <!-- 20.0Mbps -->
+        <!-- <bytesPerPeriod>1250000</bytesPerPeriod> --> <!-- 10.0Mbps -->
+        <!-- <bytesPerPeriod>625000</bytesPerPeriod> --> <!-- 5Mbps -->
+        <!-- <bytesPerPeriod>312500</bytesPerPeriod> --> <!-- 2.5Mbps -->
+        <!-- <bytesPerPeriod>125000</bytesPerPeriod> --> <!-- 1.0Mbps -->
+        <!-- <bytesPerPeriod>62500</bytesPerPeriod> --> <!-- 0.5Mbps -->
+        <!-- <bytesPerPeriod>81250</bytesPerPeriod> --> <!-- 0.65 Mbps or 10*65kb -->
+        <periodMillisecs>1000</periodMillisecs>
+      </throughputController>
+    </publisher>
+    <subscriber profile_name="subscriber_profile" is_default_profile="true">
+      <qos>
+        <reliability>
+          <max_blocking_time>
+            <sec>0</sec>
+            <nanosec>10000000</nanosec>
+          </max_blocking_time>
+        </reliability>
+      </qos>
+    </subscriber>
+</profiles>

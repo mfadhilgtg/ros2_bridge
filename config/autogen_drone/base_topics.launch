@@ -1,0 +1,74 @@
+<launch>
+  <!--This file is auto-generated. Do not edit.-->
+  <arg name="robot_namespace"/>
+  <arg name="base_namespace"/>
+  <arg name="robot_list"/>
+  <arg default="" name="suffix"/>
+  <include file="$(find ros2_bridge)/launch/include/encode.launch" if="$(eval 'scout1' in robot_list)">
+    <arg name="robot_namespace" value="$(arg robot_namespace)"/>
+    <arg name="type" value="geometry_msgs/Twist"/>
+    <arg name="input" value="/scout1/cmd_vel"/>
+    <arg name="rate" value="10"/>
+    <arg name="suffix" value="$(arg suffix)"/>
+  </include>
+  <include file="$(find ros2_bridge)/launch/include/encode.launch" if="$(eval 'scout1' in robot_list)">
+    <arg name="robot_namespace" value="$(arg robot_namespace)"/>
+    <arg name="type" value="drone_msgs/Behaviors"/>
+    <arg name="input" value="/scout1/drone_behavior"/>
+    <arg name="suffix" value="$(arg suffix)"/>
+  </include>
+  <include file="$(find ros2_bridge)/launch/include/encode.launch" if="$(eval 'scout1' in robot_list)">
+    <arg name="robot_namespace" value="$(arg robot_namespace)"/>
+    <arg name="type" value="geometry_msgs/PoseStamped"/>
+    <arg name="input" value="/scout1/move_base_simple/goal"/>
+    <arg name="suffix" value="$(arg suffix)"/>
+  </include>
+  <include file="$(find ros2_bridge)/launch/include/decode.launch" if="$(eval robot_namespace.startswith('base') and 'scout1' in robot_list)">
+    <arg name="robot_namespace" value="$(arg robot_namespace)"/>
+    <arg name="type" value="sensor_msgs/PointCloud2"/>
+    <arg name="output" value="/scout1/global_mapper_ros/cost_grid"/>
+    <arg name="suffix" value="$(arg suffix)"/>
+  </include>
+  <include file="$(find ros2_bridge)/launch/include/decode.launch" if="$(eval robot_namespace.startswith('base') and 'scout1' in robot_list)">
+    <arg name="robot_namespace" value="$(arg robot_namespace)"/>
+    <arg name="type" value="visualization_msgs/MarkerArray"/>
+    <arg name="output" value="/scout1/global_mapper_ros/occupancy_grid_marker_topic"/>
+    <arg name="suffix" value="$(arg suffix)"/>
+  </include>
+  <include file="$(find ros2_bridge)/launch/include/decode.launch" if="$(eval robot_namespace.startswith('base') and 'scout1' in robot_list)">
+    <arg name="robot_namespace" value="$(arg robot_namespace)"/>
+    <arg name="type" value="visualization_msgs/MarkerArray"/>
+    <arg name="output" value="/scout1/global_mapper_ros/unknown_grid_marker_topic"/>
+    <arg name="suffix" value="$(arg suffix)"/>
+  </include>
+  <include file="$(find ros2_bridge)/launch/include/decode.launch" if="$(eval robot_namespace.startswith('base') and 'scout1' in robot_list)">
+    <arg name="robot_namespace" value="$(arg robot_namespace)"/>
+    <arg name="type" value="geometry_msgs/PoseStamped"/>
+    <arg name="output" value="/scout1/pose"/>
+    <arg name="suffix" value="$(arg suffix)"/>
+  </include>
+  <include file="$(find ros2_bridge)/launch/include/decode.launch" if="$(eval robot_namespace.startswith('base') and 'scout1' in robot_list)">
+    <arg name="robot_namespace" value="$(arg robot_namespace)"/>
+    <arg name="type" value="sensor_msgs/PointCloud2"/>
+    <arg name="output" value="/scout1/primitives"/>
+    <arg name="suffix" value="$(arg suffix)"/>
+  </include>
+  <include file="$(find ros2_bridge)/launch/include/decode.launch" if="$(eval robot_namespace.startswith('base') and 'scout1' in robot_list)">
+    <arg name="robot_namespace" value="$(arg robot_namespace)"/>
+    <arg name="type" value="sensor_msgs/CameraInfo"/>
+    <arg name="output" value="/scout1/telemetry/camera_info"/>
+    <arg name="suffix" value="$(arg suffix)"/>
+  </include>
+  <include file="$(find ros2_bridge)/launch/include/decode.launch" if="$(eval robot_namespace.startswith('base') and 'scout1' in robot_list)">
+    <arg name="robot_namespace" value="$(arg robot_namespace)"/>
+    <arg name="type" value="sensor_msgs/CompressedImage"/>
+    <arg name="output" value="/scout1/telemetry/image/compressed"/>
+    <arg name="suffix" value="$(arg suffix)"/>
+  </include>
+  <include file="$(find ros2_bridge)/launch/include/decode.launch" if="$(eval robot_namespace.startswith('base') and 'scout1' in robot_list)">
+    <arg name="robot_namespace" value="$(arg robot_namespace)"/>
+    <arg name="type" value="tf2_msgs/TFMessage"/>
+    <arg name="output" value="/scout1/tf"/>
+    <arg name="suffix" value="$(arg suffix)"/>
+  </include>
+</launch>

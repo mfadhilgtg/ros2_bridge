@@ -1,0 +1,64 @@
+# This file is auto-generated. Do not edit.
+ros_bridge_subt:
+  ros__parameters:
+    topics_1_to_2:
+      default:
+        topic_names:
+        - /_ALL_ROBOTS_/cmd_vel/compressed
+        - /_ALL_ROBOTS_/max_driver/fptp/compressed
+        - /_ALL_ROBOTS_/mission/command/compressed
+        - /_ALL_ROBOTS_/mission/follow_robot/compressed
+        - /_ALL_ROBOTS_/mission/heartbeat/compressed
+        - /_ALL_ROBOTS_/move_base_simple/goal/compressed
+        - /_ALL_ROBOTS_/spot_driver/mode/compressed
+        - /_ALL_ROBOTS_/spot_driver/tilt/compressed
+        - /_BASE_/comm_node_manager/status_agg/compressed
+        - /_BASE_/mission/state/compressed
+        - /_ALL_ROBOTS_/artifact/ack
+        - /_ALL_ROBOTS_/audio_rssi/keyed_value/ack
+        - /_ALL_ROBOTS_/bt_rssi/keyed_value/ack
+        - /_ALL_ROBOTS_/co2/keyed_value/ack
+        - /_ALL_ROBOTS_/lamp/keyed_scans/ack
+        - /_ALL_ROBOTS_/lamp/pose_graph_incremental/ack
+        - /_ALL_ROBOTS_/roadmap/update_base/ack
+        - /_ALL_ROBOTS_/uwb_frontend/range_measurements/ack
+        - /_ALL_ROBOTS_/wifi_rssi/keyed_value/ack
+      reliable:
+        topic_names:
+        - /_ALL_ROBOTS_/lamp/base_pose_graph_diff/compressed/reliable
+        - /_ALL_ROBOTS_/roadmap/update/compressed/reliable
+    topics_2_to_1:
+      default:
+        topic_names:
+        - /_ALL_ROBOTS_/copilot/communicator/dialogue_request/compressed
+        - /_ALL_ROBOTS_/diagnostics_agg/compressed
+        - /_ALL_ROBOTS_/graph_level_planner_node/current_goal_marker/compressed
+        - /_ALL_ROBOTS_/lamp/lamp_pose/compressed
+        - /_ALL_ROBOTS_/map_level_planner_node/refined_path/compressed
+        - /_ALL_ROBOTS_/mission/state/compressed
+        - /_ALL_ROBOTS_/mission/status/compressed
+        - /_ALL_ROBOTS_/mobility_manager/current_path/compressed
+        - /_ALL_ROBOTS_/mobility_status/compressed
+        - /_ALL_ROBOTS_/move_base/GlobalPlanner/plan/compressed
+        - /_ALL_ROBOTS_/move_base/MPCPlannerROS/body_marker_traj/compressed
+        - /_ALL_ROBOTS_/move_base/current_goal/compressed
+        - /_ALL_ROBOTS_/move_base_planner/costmap/viz/costmap/compressed
+        - /_ALL_ROBOTS_/roadmap_local/marker/compressed
+        - /_ALL_ROBOTS_/spot_driver/active_mode/compressed
+        - /_ALL_ROBOTS_/telemetry/image/compressed/compressed
+        - /_ALL_ROBOTS_/telemetry/joint_states/compressed
+        - /_ALL_ROBOTS_/tf/compressed
+        - /_ALL_ROBOTS_/vehicle_status/compressed
+        - /_ALL_ROBOTS_/lamp/base_pose_graph_diff/ack
+        - /_ALL_ROBOTS_/roadmap/update/ack
+      reliable:
+        topic_names:
+        - /_ALL_ROBOTS_/artifact/compressed/reliable
+        - /_ALL_ROBOTS_/audio_rssi/keyed_value/compressed/reliable
+        - /_ALL_ROBOTS_/bt_rssi/keyed_value/compressed/reliable
+        - /_ALL_ROBOTS_/co2/keyed_value/compressed/reliable
+        - /_ALL_ROBOTS_/lamp/keyed_scans/compressed/reliable
+        - /_ALL_ROBOTS_/lamp/pose_graph_incremental/compressed/reliable
+        - /_ALL_ROBOTS_/roadmap/update_base/compressed/reliable
+        - /_ALL_ROBOTS_/uwb_frontend/range_measurements/compressed/reliable
+        - /_ALL_ROBOTS_/wifi_rssi/keyed_value/compressed/reliable

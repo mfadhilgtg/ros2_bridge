@@ -1,0 +1,12 @@
+/home/costar/ccirm_ws/src/full/comm_ros2_bridge/ros2_ws/install/ros1_bridge_subt/lib/ros1_bridge_subt/static_bridge
+/home/costar/ccirm_ws/src/full/comm_ros2_bridge/ros2_ws/install/ros1_bridge_subt/share/ament_index/resource_index/package_run_dependencies/ros1_bridge_subt
+/home/costar/ccirm_ws/src/full/comm_ros2_bridge/ros2_ws/install/ros1_bridge_subt/share/ament_index/resource_index/parent_prefix_path/ros1_bridge_subt
+/home/costar/ccirm_ws/src/full/comm_ros2_bridge/ros2_ws/install/ros1_bridge_subt/share/ros1_bridge_subt/environment/ament_prefix_path.sh
+/home/costar/ccirm_ws/src/full/comm_ros2_bridge/ros2_ws/install/ros1_bridge_subt/share/ros1_bridge_subt/environment/path.sh
+/home/costar/ccirm_ws/src/full/comm_ros2_bridge/ros2_ws/install/ros1_bridge_subt/share/ros1_bridge_subt/local_setup.bash
+/home/costar/ccirm_ws/src/full/comm_ros2_bridge/ros2_ws/install/ros1_bridge_subt/share/ros1_bridge_subt/local_setup.sh
+/home/costar/ccirm_ws/src/full/comm_ros2_bridge/ros2_ws/install/ros1_bridge_subt/share/ros1_bridge_subt/local_setup.zsh
+/home/costar/ccirm_ws/src/full/comm_ros2_bridge/ros2_ws/install/ros1_bridge_subt/share/ament_index/resource_index/packages/ros1_bridge_subt
+/home/costar/ccirm_ws/src/full/comm_ros2_bridge/ros2_ws/install/ros1_bridge_subt/share/ros1_bridge_subt/cmake/ros1_bridge_subtConfig.cmake
+/home/costar/ccirm_ws/src/full/comm_ros2_bridge/ros2_ws/install/ros1_bridge_subt/share/ros1_bridge_subt/cmake/ros1_bridge_subtConfig-version.cmake
+/home/costar/ccirm_ws/src/full/comm_ros2_bridge/ros2_ws/install/ros1_bridge_subt/share/ros1_bridge_subt/package.xml

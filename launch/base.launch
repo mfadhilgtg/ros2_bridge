@@ -1,0 +1,69 @@
+<launch>
+  <arg name="robot_namespace" default="base1"/>
+  <arg name="robot_list" default="husky1"/>
+  <arg name="suffix" default=""/>
+  <arg name="config" value="$(find ros2_bridge)/config/autogen$(arg suffix)/base.yaml"/>
+  <arg name="common_config" value="$(find ros2_bridge)/config/common$(arg suffix).yaml"/>
+  <arg name="master_config" default="$(find ros2_bridge)/config/master$(arg suffix).yaml"/>
+  <arg name="use_jpl_mm" default="false"/>
+
+  <arg name="pose_graph_topic" default="/base1/lamp/pose_graph"/>
+  <arg name="diff_graph_topic" default="lamp/base_pose_graph_diff"/>
+  <arg name="skip_changed_pg_edges" default="true"/>
+  <arg name="publish_empty_diff_graphs" default="false"/>
+
+  <!-- ROS2 bridge -->
+  <include file="$(find ros2_bridge)/launch/include/bridge.launch">
+    <arg name="robot_namespace" value="$(arg robot_namespace)"/>
+    <arg name="node_name" value="ros2_bridge_base$(arg suffix)"/>
+    <arg name="config" value="$(arg config)"/>
+    <arg name="common_config" value="$(arg common_config)"/>
+  </include>
+
+  <!-- MM JPL -->
+  <group if="$(arg use_jpl_mm)">
+    <include file="$(find mm_jpl)/launch/mm_jpl.launch">
+      <arg name="robot_namespace" value="$(arg robot_namespace)"/>
+      <arg name="mm_jpl_config" value="$(find mm_jpl)/config/$(arg robot_namespace).yaml"/>
+    </include>
+  </group>
+
+  <!-- Encoder/decoder -->
+  <include file="$(find ros2_bridge)/config/autogen$(arg suffix)/base_topics.launch">
+    <arg name="robot_namespace" value="$(arg robot_namespace)"/>
+    <arg name="robot_list" value="$(arg robot_list)"/>
+    <arg name="suffix" value="$(arg suffix)"/>
+  </include>
+
+  <group ns="$(arg robot_namespace)">
+    <param name="robot_namespace" value="$(arg robot_namespace)"/>
+    <node pkg="blob_topic_tools"
+          type="relay_sender_multiple"
+          name="compress$(arg suffix)"
+          respawn="true"/>
+    <node pkg="blob_topic_tools"
+          type="relay_receiver_multiple"
+          name="decompress$(arg suffix)"
+          respawn="true"/>
+
+    <!-- Data Reporter Receivers -->
+    <include file="$(find ros2_bridge)/launch/include/base_data_reporter.launch">
+      <arg name="common_config" value="$(arg common_config)"/>
+      <arg name="master_config" value="$(arg master_config)"/>
+      <arg name="robot_list" value="$(arg robot_list)"/>
+    </include>
+
+  </group>
+
+  <include file="$(find pose_graph_differ)/launch/pose_graph_differ.launch">
+    <arg name="robot_namespace" value="$(arg robot_namespace)"/>
+    <arg name="robot_list" value="$(arg robot_list)"/>
+    <arg name="pose_graph_topic" value="$(arg pose_graph_topic)"/>
+    <arg name="diff_graph_topic" value="$(arg diff_graph_topic)"/>
+    <arg name="skip_changed_edges" default="$(arg skip_changed_pg_edges)"/>
+    <arg name="publish_empty" default="$(arg publish_empty_diff_graphs)"/>
+  </include>
+    
+
+  
+</launch>

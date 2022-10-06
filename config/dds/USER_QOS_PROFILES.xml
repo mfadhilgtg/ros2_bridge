@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+<dds xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:noNamespaceSchemaLocation="/opt/rti.com/rti_connext_dds-5.3.1/resource/schema/rti_record.xsd"
+  version="5.3.1">
+  <qos_library name="ROS2ForceQOS">
+    <qos_profile name="ROS2_Profile" is_default_qos="true">
+      <participant_qos>
+        <property>
+          <value>
+            <!--UDP/IP Transport configuration -->
+               <!-- <element>
+                   <name>dds.transport.UDPv4.builtin.parent.message_size_max</name>
+                   <value>65536</value>
+               </element>
+               <element>
+                   <name>dds.transport.UDPv4.builtin.send_socket_buffer_size</name>
+                   <value>1000000</value>
+               </element>
+               <element>
+                   <name>dds.transport.UDPv4.builtin.recv_socket_buffer_size</name>
+                   <value>2000000</value>
+               </element> -->
+             <!--UDP/IP Transport configuration -->
+             <!-- Definition of the flow controller See users' manual section
+                 6.6 FlowControllers -->
+             <element>
+                 <name>dds.flow_controller.token_bucket.MyFlowController.scheduling_policy</name>
+                 <value>DDS_RR_FLOW_CONTROLLER_SCHED_POLICY</value>
+             </element>
+             <element>
+                 <name>dds.flow_controller.token_bucket.MyFlowController.token_bucket.period.sec</name>
+                 <value>0</value>
+             </element>
+             <element>
+                 <name>dds.flow_controller.token_bucket.MyFlowController.token_bucket.period.nanosec</name>
+                 <value>66000000</value>
+             </element>
+             <element>
+                 <name>dds.flow_controller.token_bucket.MyFlowController.token_bucket.max_tokens</name>
+                 <value>1</value>
+             </element>
+             <element>
+                 <name>dds.flow_controller.token_bucket.MyFlowController.token_bucket.tokens_added_per_period</name>
+                 <value>1</value>
+             </element>
+             <element>
+                 <name>dds.flow_controller.token_bucket.MyFlowController.token_bucket.tokens_leaked_per_period</name>
+                 <value>0</value>
+             </element>
+             <element>
+                 <name>dds.flow_controller.token_bucket.MyFlowController.token_bucket.bytes_per_token</name>
+                 <value>66000</value>
+             </element>
+          </value>
+        </property>
+      </participant_qos>
+      <datawriter_qos>
+        <publish_mode>
+          <kind>ASYNCHRONOUS_PUBLISH_MODE_QOS</kind>
+          <flow_controller_name>dds.flow_controller.token_bucket.MyFlowController</flow_controller_name>
+        </publish_mode>
+        <!-- <history>
+    			<kind>KEEP_ALL_HISTORY_QOS</kind>
+          <depth>20</depth>
+    		</history>
+    		<reliability>
+    			<kind>BEST_EFFORT_RELIABILITY_QOS</kind>
+    		</reliability> -->
+      </datawriter_qos>
+    	<!-- <datareader_qos>
+    		<history>
+    			<kind>KEEP_ALL_HISTORY_QOS</kind>
+          <depth>20</depth>
+    		</history>
+    		<reliability>
+    			<kind>BEST_EFFORT_RELIABILITY_QOS</kind>
+    		</reliability>
+    	</datareader_qos> -->
+    </qos_profile>
+  </qos_library>
+</dds>

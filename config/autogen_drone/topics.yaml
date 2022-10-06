@@ -1,0 +1,12 @@
+# This file is auto-generated. Do not edit.
+- move_base_simple/goal
+- telemetry/camera_info
+- global_mapper_ros/cost_grid
+- pose
+- telemetry/image/compressed
+- tf
+- global_mapper_ros/unknown_grid_marker_topic
+- global_mapper_ros/occupancy_grid_marker_topic
+- primitives
+- cmd_vel
+- drone_behavior

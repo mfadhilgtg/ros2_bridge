@@ -1,0 +1,321 @@
+<launch>
+  <!--This file is auto-generated. Do not edit.-->
+  <arg name="robot_namespace"/>
+  <arg name="base_namespace"/>
+  <arg name="robot_list"/>
+  <arg default="" name="suffix"/>
+  <include file="$(find ros2_bridge)/launch/include/encode.launch">
+    <arg name="robot_namespace" value="$(arg robot_namespace)"/>
+    <arg name="type" value="artifact_msgs/Artifact"/>
+    <arg name="input" value="artifact"/>
+    <arg name="suffix" value="$(arg suffix)"/>
+  </include>
+  <include file="$(find ros2_bridge)/launch/include/encode.launch">
+    <arg name="robot_namespace" value="$(arg robot_namespace)"/>
+    <arg name="type" value="pose_graph_msgs/KeyValue"/>
+    <arg name="input" value="audio_rssi/keyed_value"/>
+    <arg name="suffix" value="$(arg suffix)"/>
+  </include>
+  <include file="$(find ros2_bridge)/launch/include/encode.launch">
+    <arg name="robot_namespace" value="$(arg robot_namespace)"/>
+    <arg name="type" value="artifact_msgs/KeyValueID"/>
+    <arg name="input" value="bt_rssi/keyed_value"/>
+    <arg name="suffix" value="$(arg suffix)"/>
+  </include>
+  <include file="$(find ros2_bridge)/launch/include/encode.launch">
+    <arg name="robot_namespace" value="$(arg robot_namespace)"/>
+    <arg name="type" value="artifact_msgs/KeyValueID"/>
+    <arg name="input" value="co2/keyed_value"/>
+    <arg name="suffix" value="$(arg suffix)"/>
+  </include>
+  <include file="$(find ros2_bridge)/launch/include/encode.launch">
+    <arg name="robot_namespace" value="$(arg robot_namespace)"/>
+    <arg name="type" value="copilot_msgs/DialogueRequest"/>
+    <arg name="input" value="copilot/communicator/dialogue_request"/>
+    <arg name="suffix" value="$(arg suffix)"/>
+  </include>
+  <include file="$(find ros2_bridge)/launch/include/encode.launch">
+    <arg name="robot_namespace" value="$(arg robot_namespace)"/>
+    <arg name="type" value="diagnostic_msgs/DiagnosticArray"/>
+    <arg name="input" value="diagnostics_agg"/>
+    <arg name="suffix" value="$(arg suffix)"/>
+  </include>
+  <include file="$(find ros2_bridge)/launch/include/encode.launch">
+    <arg name="robot_namespace" value="$(arg robot_namespace)"/>
+    <arg name="type" value="visualization_msgs/Marker"/>
+    <arg name="input" value="graph_level_planner_node/current_goal_marker"/>
+    <arg name="rate" value="1"/>
+    <arg name="suffix" value="$(arg suffix)"/>
+  </include>
+  <include file="$(find ros2_bridge)/launch/include/encode.launch">
+    <arg name="robot_namespace" value="$(arg robot_namespace)"/>
+    <arg name="type" value="pose_graph_msgs/KeyedScan"/>
+    <arg name="input" value="lamp/keyed_scans"/>
+    <arg name="suffix" value="$(arg suffix)"/>
+  </include>
+  <include file="$(find ros2_bridge)/launch/include/encode.launch">
+    <arg name="robot_namespace" value="$(arg robot_namespace)"/>
+    <arg name="type" value="geometry_msgs/PoseStamped"/>
+    <arg name="input" value="lamp/lamp_pose"/>
+    <arg name="rate" value="1"/>
+    <arg name="suffix" value="$(arg suffix)"/>
+  </include>
+  <include file="$(find ros2_bridge)/launch/include/encode.launch">
+    <arg name="robot_namespace" value="$(arg robot_namespace)"/>
+    <arg name="type" value="pose_graph_msgs/PoseGraph"/>
+    <arg name="input" value="lamp/pose_graph_incremental"/>
+    <arg name="suffix" value="$(arg suffix)"/>
+  </include>
+  <include file="$(find ros2_bridge)/launch/include/encode.launch">
+    <arg name="robot_namespace" value="$(arg robot_namespace)"/>
+    <arg name="type" value="geometry_msgs/PoseStamped"/>
+    <arg name="input" value="lamp/pose_merged"/>
+    <arg name="rate" value="1"/>
+    <arg name="suffix" value="$(arg suffix)"/>
+  </include>
+  <include file="$(find ros2_bridge)/launch/include/encode.launch">
+    <arg name="robot_namespace" value="$(arg robot_namespace)"/>
+    <arg name="type" value="nav_msgs/Path"/>
+    <arg name="input" value="map_level_planner_node/refined_path"/>
+    <arg name="rate" value="0.5"/>
+    <arg name="suffix" value="$(arg suffix)"/>
+  </include>
+  <include file="$(find ros2_bridge)/launch/include/encode.launch">
+    <arg name="robot_namespace" value="$(arg robot_namespace)"/>
+    <arg name="type" value="mission_msgs/MissionState"/>
+    <arg name="input" value="mission/state"/>
+    <arg name="suffix" value="$(arg suffix)"/>
+  </include>
+  <include file="$(find ros2_bridge)/launch/include/encode.launch">
+    <arg name="robot_namespace" value="$(arg robot_namespace)"/>
+    <arg name="type" value="mission_msgs/MissionStatus"/>
+    <arg name="input" value="mission/status"/>
+    <arg name="suffix" value="$(arg suffix)"/>
+  </include>
+  <include file="$(find ros2_bridge)/launch/include/encode.launch">
+    <arg name="robot_namespace" value="$(arg robot_namespace)"/>
+    <arg name="type" value="nav_msgs/Path"/>
+    <arg name="input" value="mobility_manager/current_path"/>
+    <arg name="rate" value="0.5"/>
+    <arg name="suffix" value="$(arg suffix)"/>
+  </include>
+  <include file="$(find ros2_bridge)/launch/include/encode.launch">
+    <arg name="robot_namespace" value="$(arg robot_namespace)"/>
+    <arg name="type" value="core_msgs/MobilityStatus"/>
+    <arg name="input" value="mobility_status"/>
+    <arg name="suffix" value="$(arg suffix)"/>
+  </include>
+  <include file="$(find ros2_bridge)/launch/include/encode.launch">
+    <arg name="robot_namespace" value="$(arg robot_namespace)"/>
+    <arg name="type" value="nav_msgs/Path"/>
+    <arg name="input" value="move_base/GlobalPlanner/plan"/>
+    <arg name="rate" value="0.5"/>
+    <arg name="suffix" value="$(arg suffix)"/>
+  </include>
+  <include file="$(find ros2_bridge)/launch/include/encode.launch">
+    <arg name="robot_namespace" value="$(arg robot_namespace)"/>
+    <arg name="type" value="visualization_msgs/MarkerArray"/>
+    <arg name="input" value="move_base/MPCPlannerROS/body_marker_traj"/>
+    <arg name="rate" value="1"/>
+    <arg name="suffix" value="$(arg suffix)"/>
+  </include>
+  <include file="$(find ros2_bridge)/launch/include/encode.launch">
+    <arg name="robot_namespace" value="$(arg robot_namespace)"/>
+    <arg name="type" value="geometry_msgs/PoseStamped"/>
+    <arg name="input" value="move_base/current_goal"/>
+    <arg name="rate" value="1"/>
+    <arg name="suffix" value="$(arg suffix)"/>
+  </include>
+  <include file="$(find ros2_bridge)/launch/include/encode.launch">
+    <arg name="robot_namespace" value="$(arg robot_namespace)"/>
+    <arg name="type" value="nav_msgs/OccupancyGrid"/>
+    <arg name="input" value="move_base_planner/costmap/viz/costmap"/>
+    <arg name="rate" value="0.5"/>
+    <arg name="bandwidth" value="1500"/>
+    <arg name="suffix" value="$(arg suffix)"/>
+  </include>
+  <include file="$(find ros2_bridge)/launch/include/encode.launch">
+    <arg name="robot_namespace" value="$(arg robot_namespace)"/>
+    <arg name="type" value="roadmap_msgs/Roadmap"/>
+    <arg name="input" value="roadmap/update_base"/>
+    <arg name="suffix" value="$(arg suffix)"/>
+  </include>
+  <include file="$(find ros2_bridge)/launch/include/encode.launch">
+    <arg name="robot_namespace" value="$(arg robot_namespace)"/>
+    <arg name="type" value="visualization_msgs/MarkerArray"/>
+    <arg name="input" value="roadmap_local/marker"/>
+    <arg name="rate" value="0.1"/>
+    <arg name="suffix" value="$(arg suffix)"/>
+  </include>
+  <include file="$(find ros2_bridge)/launch/include/encode.launch">
+    <arg name="robot_namespace" value="$(arg robot_namespace)"/>
+    <arg name="type" value="std_msgs/String"/>
+    <arg name="input" value="spot_driver/active_mode"/>
+    <arg name="rate" value="1"/>
+    <arg name="suffix" value="$(arg suffix)"/>
+  </include>
+  <include file="$(find ros2_bridge)/launch/include/encode.launch">
+    <arg name="robot_namespace" value="$(arg robot_namespace)"/>
+    <arg name="type" value="sensor_msgs/CompressedImage"/>
+    <arg name="input" value="telemetry/image/compressed"/>
+    <arg name="rate" value="1"/>
+    <arg name="suffix" value="$(arg suffix)"/>
+  </include>
+  <include file="$(find ros2_bridge)/launch/include/encode.launch">
+    <arg name="robot_namespace" value="$(arg robot_namespace)"/>
+    <arg name="type" value="sensor_msgs/JointState"/>
+    <arg name="input" value="telemetry/joint_states"/>
+    <arg name="rate" value="1"/>
+    <arg name="suffix" value="$(arg suffix)"/>
+  </include>
+  <include file="$(find ros2_bridge)/launch/include/encode.launch">
+    <arg name="robot_namespace" value="$(arg robot_namespace)"/>
+    <arg name="type" value="tf2_msgs/TFMessage"/>
+    <arg name="input" value="tf"/>
+    <arg name="suffix" value="$(arg suffix)"/>
+  </include>
+  <include file="$(find ros2_bridge)/launch/include/encode.launch">
+    <arg name="robot_namespace" value="$(arg robot_namespace)"/>
+    <arg name="type" value="pose_graph_msgs/PoseGraph"/>
+    <arg name="input" value="uwb_frontend/range_measurements"/>
+    <arg name="suffix" value="$(arg suffix)"/>
+  </include>
+  <include file="$(find ros2_bridge)/launch/include/encode.launch">
+    <arg name="robot_namespace" value="$(arg robot_namespace)"/>
+    <arg name="type" value="core_msgs/VehicleStatus"/>
+    <arg name="input" value="vehicle_status"/>
+    <arg name="suffix" value="$(arg suffix)"/>
+  </include>
+  <include file="$(find ros2_bridge)/launch/include/encode.launch">
+    <arg name="robot_namespace" value="$(arg robot_namespace)"/>
+    <arg name="type" value="artifact_msgs/KeyValueID"/>
+    <arg name="input" value="wifi_rssi/keyed_value"/>
+    <arg name="suffix" value="$(arg suffix)"/>
+  </include>
+  <include file="$(find ros2_bridge)/launch/include/decode.launch">
+    <arg name="robot_namespace" value="$(arg robot_namespace)"/>
+    <arg name="type" value="core_msgs/CommNodeStatus"/>
+    <arg name="output" value="/$(arg base_namespace)/comm_node_manager/status_agg"/>
+    <arg name="suffix" value="$(arg suffix)"/>
+  </include>
+  <include file="$(find ros2_bridge)/launch/include/decode.launch">
+    <arg name="robot_namespace" value="$(arg robot_namespace)"/>
+    <arg name="type" value="mission_msgs/BaseMissionState"/>
+    <arg name="output" value="/$(arg base_namespace)/mission/state"/>
+    <arg name="suffix" value="$(arg suffix)"/>
+  </include>
+  <include file="$(find ros2_bridge)/launch/include/decode.launch" if="$(eval robot_namespace != 'husky1' and 'husky1' in robot_list)">
+    <arg name="robot_namespace" value="$(arg robot_namespace)"/>
+    <arg name="type" value="geometry_msgs/PoseStamped"/>
+    <arg name="output" value="/husky1/lamp/pose_merged"/>
+    <arg name="suffix" value="$(arg suffix)"/>
+  </include>
+  <include file="$(find ros2_bridge)/launch/include/decode.launch" if="$(eval robot_namespace != 'husky2' and 'husky2' in robot_list)">
+    <arg name="robot_namespace" value="$(arg robot_namespace)"/>
+    <arg name="type" value="geometry_msgs/PoseStamped"/>
+    <arg name="output" value="/husky2/lamp/pose_merged"/>
+    <arg name="suffix" value="$(arg suffix)"/>
+  </include>
+  <include file="$(find ros2_bridge)/launch/include/decode.launch" if="$(eval robot_namespace != 'husky3' and 'husky3' in robot_list)">
+    <arg name="robot_namespace" value="$(arg robot_namespace)"/>
+    <arg name="type" value="geometry_msgs/PoseStamped"/>
+    <arg name="output" value="/husky3/lamp/pose_merged"/>
+    <arg name="suffix" value="$(arg suffix)"/>
+  </include>
+  <include file="$(find ros2_bridge)/launch/include/decode.launch" if="$(eval robot_namespace != 'husky4' and 'husky4' in robot_list)">
+    <arg name="robot_namespace" value="$(arg robot_namespace)"/>
+    <arg name="type" value="geometry_msgs/PoseStamped"/>
+    <arg name="output" value="/husky4/lamp/pose_merged"/>
+    <arg name="suffix" value="$(arg suffix)"/>
+  </include>
+  <include file="$(find ros2_bridge)/launch/include/decode.launch" if="$(eval robot_namespace != 'spot1' and 'spot1' in robot_list)">
+    <arg name="robot_namespace" value="$(arg robot_namespace)"/>
+    <arg name="type" value="geometry_msgs/PoseStamped"/>
+    <arg name="output" value="/spot1/lamp/pose_merged"/>
+    <arg name="suffix" value="$(arg suffix)"/>
+  </include>
+  <include file="$(find ros2_bridge)/launch/include/decode.launch" if="$(eval robot_namespace != 'spot2' and 'spot2' in robot_list)">
+    <arg name="robot_namespace" value="$(arg robot_namespace)"/>
+    <arg name="type" value="geometry_msgs/PoseStamped"/>
+    <arg name="output" value="/spot2/lamp/pose_merged"/>
+    <arg name="suffix" value="$(arg suffix)"/>
+  </include>
+  <include file="$(find ros2_bridge)/launch/include/decode.launch" if="$(eval robot_namespace != 'spot3' and 'spot3' in robot_list)">
+    <arg name="robot_namespace" value="$(arg robot_namespace)"/>
+    <arg name="type" value="geometry_msgs/PoseStamped"/>
+    <arg name="output" value="/spot3/lamp/pose_merged"/>
+    <arg name="suffix" value="$(arg suffix)"/>
+  </include>
+  <include file="$(find ros2_bridge)/launch/include/decode.launch" if="$(eval robot_namespace != 'spot4' and 'spot4' in robot_list)">
+    <arg name="robot_namespace" value="$(arg robot_namespace)"/>
+    <arg name="type" value="geometry_msgs/PoseStamped"/>
+    <arg name="output" value="/spot4/lamp/pose_merged"/>
+    <arg name="suffix" value="$(arg suffix)"/>
+  </include>
+  <include file="$(find ros2_bridge)/launch/include/decode.launch" if="$(eval robot_namespace != 'xmaxx1' and 'xmaxx1' in robot_list)">
+    <arg name="robot_namespace" value="$(arg robot_namespace)"/>
+    <arg name="type" value="geometry_msgs/PoseStamped"/>
+    <arg name="output" value="/xmaxx1/lamp/pose_merged"/>
+    <arg name="suffix" value="$(arg suffix)"/>
+  </include>
+  <include file="$(find ros2_bridge)/launch/include/decode.launch">
+    <arg name="robot_namespace" value="$(arg robot_namespace)"/>
+    <arg name="type" value="geometry_msgs/Twist"/>
+    <arg name="output" value="cmd_vel"/>
+    <arg name="suffix" value="$(arg suffix)"/>
+  </include>
+  <include file="$(find ros2_bridge)/launch/include/decode.launch">
+    <arg name="robot_namespace" value="$(arg robot_namespace)"/>
+    <arg name="type" value="pose_graph_msgs/PoseGraph"/>
+    <arg name="output" value="lamp/base_pose_graph_diff"/>
+    <arg name="suffix" value="$(arg suffix)"/>
+  </include>
+  <include file="$(find ros2_bridge)/launch/include/decode.launch">
+    <arg name="robot_namespace" value="$(arg robot_namespace)"/>
+    <arg name="type" value="hw_msgs/Fptp"/>
+    <arg name="output" value="max_driver/fptp"/>
+    <arg name="suffix" value="$(arg suffix)"/>
+  </include>
+  <include file="$(find ros2_bridge)/launch/include/decode.launch">
+    <arg name="robot_namespace" value="$(arg robot_namespace)"/>
+    <arg name="type" value="mission_msgs/MissionCommand"/>
+    <arg name="output" value="mission/command"/>
+    <arg name="suffix" value="$(arg suffix)"/>
+  </include>
+  <include file="$(find ros2_bridge)/launch/include/decode.launch">
+    <arg name="robot_namespace" value="$(arg robot_namespace)"/>
+    <arg name="type" value="std_msgs/String"/>
+    <arg name="output" value="mission/follow_robot"/>
+    <arg name="suffix" value="$(arg suffix)"/>
+  </include>
+  <include file="$(find ros2_bridge)/launch/include/decode.launch">
+    <arg name="robot_namespace" value="$(arg robot_namespace)"/>
+    <arg name="type" value="core_msgs/HeartBeat"/>
+    <arg name="output" value="mission/heartbeat"/>
+    <arg name="suffix" value="$(arg suffix)"/>
+  </include>
+  <include file="$(find ros2_bridge)/launch/include/decode.launch">
+    <arg name="robot_namespace" value="$(arg robot_namespace)"/>
+    <arg name="type" value="geometry_msgs/PoseStamped"/>
+    <arg name="output" value="move_base_simple/goal"/>
+    <arg name="suffix" value="$(arg suffix)"/>
+  </include>
+  <include file="$(find ros2_bridge)/launch/include/decode.launch">
+    <arg name="robot_namespace" value="$(arg robot_namespace)"/>
+    <arg name="type" value="roadmap_msgs/Roadmap"/>
+    <arg name="output" value="roadmap/update"/>
+    <arg name="suffix" value="$(arg suffix)"/>
+  </include>
+  <include file="$(find ros2_bridge)/launch/include/decode.launch">
+    <arg name="robot_namespace" value="$(arg robot_namespace)"/>
+    <arg name="type" value="std_msgs/String"/>
+    <arg name="output" value="spot_driver/mode"/>
+    <arg name="suffix" value="$(arg suffix)"/>
+  </include>
+  <include file="$(find ros2_bridge)/launch/include/decode.launch">
+    <arg name="robot_namespace" value="$(arg robot_namespace)"/>
+    <arg name="type" value="geometry_msgs/PoseStamped"/>
+    <arg name="output" value="spot_driver/tilt"/>
+    <arg name="suffix" value="$(arg suffix)"/>
+  </include>
+</launch>

@@ -1,0 +1,57 @@
+[0.105s] -- The C compiler identification is GNU 7.5.0
+[0.180s] -- The CXX compiler identification is GNU 7.5.0
+[0.185s] -- Check for working C compiler: /usr/bin/cc
+[0.304s] -- Check for working C compiler: /usr/bin/cc -- works
+[0.307s] -- Detecting C compiler ABI info
+[0.395s] -- Detecting C compiler ABI info - done
+[0.402s] -- Detecting C compile features
+[0.699s] -- Detecting C compile features - done
+[0.701s] -- Check for working CXX compiler: /usr/bin/c++
+[0.886s] -- Check for working CXX compiler: /usr/bin/c++ -- works
+[0.887s] -- Detecting CXX compiler ABI info
+[1.005s] -- Detecting CXX compiler ABI info - done
+[1.013s] -- Detecting CXX compile features
+[1.495s] -- Detecting CXX compile features - done
+[1.503s] -- Found ament_cmake: 0.7.6 (/opt/ros/dashing/share/ament_cmake/cmake)
+[1.554s] -- Found PythonInterp: /usr/bin/python3 (found suitable version "3.6.9", minimum required is "3") 
+[1.554s] -- Using PYTHON_EXECUTABLE: /usr/bin/python3
+[1.984s] -- Found rclcpp: 0.7.16 (/opt/ros/dashing/share/rclcpp/cmake)
+[2.018s] -- Found rosidl_adapter: 0.7.10 (/opt/ros/dashing/share/rosidl_adapter/cmake)
+[2.083s] -- Found rmw_implementation_cmake: 0.7.2 (/opt/ros/dashing/share/rmw_implementation_cmake/cmake)
+[2.085s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[2.087s] -- Looking for pthread.h
+[2.191s] -- Looking for pthread.h - found
+[2.192s] -- Looking for pthread_create
+[2.309s] -- Looking for pthread_create - not found
+[2.309s] -- Looking for pthread_create in pthreads
+[2.399s] -- Looking for pthread_create in pthreads - not found
+[2.399s] -- Looking for pthread_create in pthread
+[2.495s] -- Looking for pthread_create in pthread - found
+[2.497s] -- Found Threads: TRUE  
+[2.551s] -- Found ros1_bridge: 0.7.9 (/opt/ros/dashing/share/ros1_bridge/cmake)
+[2.561s] -- Found PkgConfig: /usr/bin/pkg-config (found version "0.29.1") 
+[2.563s] -- Checking for module 'roscpp'
+[2.599s] --   Found roscpp, version 1.14.3
+[2.941s] -- Configuring done
+[2.962s] -- Generating done
+[2.966s] -- Build files have been written to: /home/costar/ccirm_ws/src/full/comm_ros2_bridge/ros2_ws/build/ros1_bridge_subt
+[3.036s] [35m[1mScanning dependencies of target static_bridge[0m
+[3.113s] [ 50%] [32mBuilding CXX object CMakeFiles/static_bridge.dir/src/static_bridge.cpp.o[0m
+[9.336s] [100%] [32m[1mLinking CXX executable static_bridge[0m
+[10.531s] [100%] Built target static_bridge
+[11.150s] [100%] Built target static_bridge
+[11.210s] [36mInstall the project...[0m
+[11.244s] -- Install configuration: ""
+[11.245s] -- Installing: /home/costar/ccirm_ws/src/full/comm_ros2_bridge/ros2_ws/install/ros1_bridge_subt/lib/ros1_bridge_subt/static_bridge
+[11.246s] -- Set runtime path of "/home/costar/ccirm_ws/src/full/comm_ros2_bridge/ros2_ws/install/ros1_bridge_subt/lib/ros1_bridge_subt/static_bridge" to ""
+[11.250s] -- Installing: /home/costar/ccirm_ws/src/full/comm_ros2_bridge/ros2_ws/install/ros1_bridge_subt/share/ament_index/resource_index/package_run_dependencies/ros1_bridge_subt
+[11.251s] -- Installing: /home/costar/ccirm_ws/src/full/comm_ros2_bridge/ros2_ws/install/ros1_bridge_subt/share/ament_index/resource_index/parent_prefix_path/ros1_bridge_subt
+[11.252s] -- Installing: /home/costar/ccirm_ws/src/full/comm_ros2_bridge/ros2_ws/install/ros1_bridge_subt/share/ros1_bridge_subt/environment/ament_prefix_path.sh
+[11.252s] -- Installing: /home/costar/ccirm_ws/src/full/comm_ros2_bridge/ros2_ws/install/ros1_bridge_subt/share/ros1_bridge_subt/environment/path.sh
+[11.252s] -- Installing: /home/costar/ccirm_ws/src/full/comm_ros2_bridge/ros2_ws/install/ros1_bridge_subt/share/ros1_bridge_subt/local_setup.bash
+[11.252s] -- Installing: /home/costar/ccirm_ws/src/full/comm_ros2_bridge/ros2_ws/install/ros1_bridge_subt/share/ros1_bridge_subt/local_setup.sh
+[11.252s] -- Installing: /home/costar/ccirm_ws/src/full/comm_ros2_bridge/ros2_ws/install/ros1_bridge_subt/share/ros1_bridge_subt/local_setup.zsh
+[11.253s] -- Installing: /home/costar/ccirm_ws/src/full/comm_ros2_bridge/ros2_ws/install/ros1_bridge_subt/share/ament_index/resource_index/packages/ros1_bridge_subt
+[11.253s] -- Installing: /home/costar/ccirm_ws/src/full/comm_ros2_bridge/ros2_ws/install/ros1_bridge_subt/share/ros1_bridge_subt/cmake/ros1_bridge_subtConfig.cmake
+[11.253s] -- Installing: /home/costar/ccirm_ws/src/full/comm_ros2_bridge/ros2_ws/install/ros1_bridge_subt/share/ros1_bridge_subt/cmake/ros1_bridge_subtConfig-version.cmake
+[11.253s] -- Installing: /home/costar/ccirm_ws/src/full/comm_ros2_bridge/ros2_ws/install/ros1_bridge_subt/share/ros1_bridge_subt/package.xml

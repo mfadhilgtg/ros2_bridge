@@ -1,0 +1,18 @@
+[0.037s] make[3]: warning: jobserver unavailable: using -j1.  Add '+' to parent make rule.
+[0.103s] [100%] Built target static_bridge
+[0.176s] make[3]: warning: jobserver unavailable: using -j1.  Add '+' to parent make rule.
+[0.230s] [100%] Built target static_bridge
+[0.252s] [36mInstall the project...[0m
+[0.261s] -- Install configuration: ""
+[0.261s] -- Up-to-date: /home/costar/ccirm_ws/src/full/comm_ros2_bridge/ros2_ws/install/ros1_bridge_subt/lib/ros1_bridge_subt/static_bridge
+[0.261s] -- Up-to-date: /home/costar/ccirm_ws/src/full/comm_ros2_bridge/ros2_ws/install/ros1_bridge_subt/share/ament_index/resource_index/package_run_dependencies/ros1_bridge_subt
+[0.261s] -- Up-to-date: /home/costar/ccirm_ws/src/full/comm_ros2_bridge/ros2_ws/install/ros1_bridge_subt/share/ament_index/resource_index/parent_prefix_path/ros1_bridge_subt
+[0.262s] -- Up-to-date: /home/costar/ccirm_ws/src/full/comm_ros2_bridge/ros2_ws/install/ros1_bridge_subt/share/ros1_bridge_subt/environment/ament_prefix_path.sh
+[0.262s] -- Up-to-date: /home/costar/ccirm_ws/src/full/comm_ros2_bridge/ros2_ws/install/ros1_bridge_subt/share/ros1_bridge_subt/environment/path.sh
+[0.262s] -- Up-to-date: /home/costar/ccirm_ws/src/full/comm_ros2_bridge/ros2_ws/install/ros1_bridge_subt/share/ros1_bridge_subt/local_setup.bash
+[0.262s] -- Up-to-date: /home/costar/ccirm_ws/src/full/comm_ros2_bridge/ros2_ws/install/ros1_bridge_subt/share/ros1_bridge_subt/local_setup.sh
+[0.262s] -- Up-to-date: /home/costar/ccirm_ws/src/full/comm_ros2_bridge/ros2_ws/install/ros1_bridge_subt/share/ros1_bridge_subt/local_setup.zsh
+[0.262s] -- Up-to-date: /home/costar/ccirm_ws/src/full/comm_ros2_bridge/ros2_ws/install/ros1_bridge_subt/share/ament_index/resource_index/packages/ros1_bridge_subt
+[0.262s] -- Up-to-date: /home/costar/ccirm_ws/src/full/comm_ros2_bridge/ros2_ws/install/ros1_bridge_subt/share/ros1_bridge_subt/cmake/ros1_bridge_subtConfig.cmake
+[0.262s] -- Up-to-date: /home/costar/ccirm_ws/src/full/comm_ros2_bridge/ros2_ws/install/ros1_bridge_subt/share/ros1_bridge_subt/cmake/ros1_bridge_subtConfig-version.cmake
+[0.262s] -- Up-to-date: /home/costar/ccirm_ws/src/full/comm_ros2_bridge/ros2_ws/install/ros1_bridge_subt/share/ros1_bridge_subt/package.xml

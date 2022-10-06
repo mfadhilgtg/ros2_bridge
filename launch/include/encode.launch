@@ -1,0 +1,45 @@
+<launch>
+  <arg name="robot_namespace"/>
+  <arg name="type"/>
+  <arg name="input"/>
+  <arg name="output" default="$(arg input)/compressed"/>
+  <arg name="rate" default="0"/>  <!-- Hz -->
+  <arg name="bandwidth" default="0"/>  <!-- Bytes -->
+  <arg name="suffix" default=""/>
+
+  <arg name="escaped_topic" value="$(eval input.replace('/', '_'))"/>
+
+  <arg name="in_compress" value="$(arg input)/rate_throttle" if="$(eval rate > 0)"/>
+  <arg name="in_compress" value="$(arg input)" unless="$(eval rate > 0)"/>
+  <arg name="out_compress" value="$(arg input)/compressed_unthrottle" if="$(eval bandwidth > 0)"/>
+  <arg name="out_compress" value="$(arg output)" unless="$(eval bandwidth > 0)"/>
+
+  <group ns="$(arg robot_namespace)">
+    <!-- Apply rate throttling -->
+    <group if="$(eval rate > 0)">
+      <node pkg="topic_tools"
+            type="throttle"
+            name="rate_throttle_$(arg escaped_topic)$(arg suffix)"
+            args="messages $(arg input) $(arg rate) $(arg in_compress)"
+            respawn="true"/>
+    </group>
+
+    <!-- Compress (actual work is done in x4 external node) -->
+    <rosparam ns="compress$(arg suffix)/topics/$(arg escaped_topic)" subst_value="true">
+      topic_type: $(arg type)
+      input: $(arg in_compress)
+      output: $(arg out_compress)
+      queue_size: 4000
+    </rosparam>
+
+    <!-- Apply bandwidth throttling -->
+    <group if="$(eval bandwidth > 0)">
+      <node pkg="topic_tools"
+            type="throttle"
+            name="bw_throttle_$(arg escaped_topic)$(arg suffix)"
+            args="bytes $(arg out_compress) $(arg bandwidth) 10.0 $(arg output)"
+            respawn="true"/>
+    </group>
+  </group>
+
+</launch>

@@ -1,0 +1,64 @@
+<launch>
+  <arg name="robot_namespace" default="husky1"/>
+  <arg name="base_namespace" default="base1"/>
+  <arg name="robot_list" default="husky1 husky2 husky3 husky4 telemax1"/>
+  <arg name="suffix" default=""/>
+  <arg name="config" value="$(find ros2_bridge)/config/autogen$(arg suffix)/robot.yaml"/>
+  <arg name="common_config" value="$(find ros2_bridge)/config/common$(arg suffix).yaml"/>
+  <arg name="master_config" default="$(find ros2_bridge)/config/master$(arg suffix).yaml"/>
+  <arg name="use_jpl_mm" default="false"/>
+
+  <arg name="pose_graph_topic" default="/base1/lamp/pose_graph"/>
+  <arg name="diff_graph_topic" default="lamp/base_pose_graph_diff"/>
+
+  <!-- ROS2 bridge -->
+  <include file="$(find ros2_bridge)/launch/include/bridge.launch">
+    <arg name="robot_namespace" value="$(arg robot_namespace)"/>
+    <arg name="node_name" value="ros2_bridge_robot"/>
+    <arg name="config" value="$(arg config)"/>
+    <arg name="common_config" value="$(arg common_config)"/>
+  </include>
+
+  <!-- MM JPL -->
+  <group if="$(arg use_jpl_mm)">
+    <include file="$(find mm_jpl)/launch/mm_jpl.launch">
+      <arg name="robot_namespace" value="$(arg robot_namespace)"/>
+      <arg name="mm_jpl_config" value="$(find mm_jpl)/config/$(arg robot_namespace).yaml"/>
+    </include>
+  </group>
+
+  <!-- Encoder/decoder -->
+  <include file="$(find ros2_bridge)/config/autogen$(arg suffix)/robot_topics.launch">
+    <arg name="robot_namespace" value="$(arg robot_namespace)"/>
+    <arg name="base_namespace" value="$(arg base_namespace)"/>
+    <arg name="robot_list" value="$(arg robot_list)"/>
+  </include>
+
+  <group ns="$(arg robot_namespace)">
+    <param name="robot_namespace" value="$(arg robot_namespace)"/>
+    <node pkg="blob_topic_tools"
+          type="relay_sender_multiple"
+          name="compress"
+          respawn="true"/>
+    <node pkg="blob_topic_tools"
+          type="relay_receiver_multiple"
+          name="decompress"
+          respawn="true"/>
+          
+    <!-- Data Reporter Sender -->
+    <include file="$(find ros2_bridge)/launch/include/robot_data_reporter.launch">
+      <arg name="robot_namespace" value="$(arg robot_namespace)"/>
+      <arg name="common_config" value="$(arg common_config)"/>
+      <arg name="master_config" value="$(arg master_config)"/>
+    </include>
+
+  </group>
+
+  <include file="$(find pose_graph_differ)/launch/pose_graph_patcher.launch">
+    <arg name="robot_namespace" value="$(arg robot_namespace)"/>
+    <arg name="pose_graph_topic" value="$(arg pose_graph_topic)"/>
+    <arg name="diff_graph_topic" value="$(arg diff_graph_topic)"/>
+  </include>
+
+  
+</launch>

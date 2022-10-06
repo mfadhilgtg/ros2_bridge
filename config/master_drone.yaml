@@ -1,0 +1,45 @@
+# Change this file, and execute
+#   $ rosrun ros2_bridge generate_config.sh
+
+robot_to_base:
+  topics:
+    /_ROBOT_/pose:
+      type: geometry_msgs/PoseStamped
+      rate: 1
+    /_ROBOT_/global_mapper_ros/occupancy_grid_marker_topic:
+      type: visualization_msgs/MarkerArray
+      rate: 0.1
+    /_ROBOT_/global_mapper_ros/unknown_grid_marker_topic:
+      type: visualization_msgs/MarkerArray
+      rate: 0.1
+    /_ROBOT_/global_mapper_ros/cost_grid:
+      type: sensor_msgs/PointCloud2
+      rate: 0.1
+    /_ROBOT_/primitives:
+      type: sensor_msgs/PointCloud2
+      rate: 1
+    /_ROBOT_/telemetry/image/compressed:
+      type: sensor_msgs/CompressedImage
+      rate: 1
+    /_ROBOT_/telemetry/camera_info:
+      type: sensor_msgs/CameraInfo
+      rate: 1
+    /_ROBOT_/tf:
+      type: tf2_msgs/TFMessage
+  publisher: robot
+  subscriber: base
+  qos: default
+
+
+base_to_robot:
+  topics:
+    /_ROBOT_/cmd_vel:
+      type: geometry_msgs/Twist
+      rate: 10
+    /_ROBOT_/drone_behavior:
+      type: drone_msgs/Behaviors
+    /_ROBOT_/move_base_simple/goal:
+      type: geometry_msgs/PoseStamped
+  publisher: base
+  subscriber: robot
+  qos: default

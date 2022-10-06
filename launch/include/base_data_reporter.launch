@@ -1,0 +1,50 @@
+<launch>
+  <arg name="robot_list" default="husky1 husky2 husky3 husky4 telemax1 scout1"/>
+  <arg name="suffix" default=""/>
+  <arg name="common_config" default="$(find ros2_bridge)/config/common$(arg suffix).yaml"/>
+  <arg name="master_config" default="$(find ros2_bridge)/config/master$(arg suffix).yaml"/>
+    
+  <arg name="ack_timeout" default="60.0"/>
+
+  <env name="ROSCONSOLE_FORMAT" value="[${severity}] [${time}] [${node}]: ${message}"/>
+  
+  <!-- Robot specific nodes -->
+  <arg name="robot_namespace" value="$(eval robot_list.split()[0])"/>
+
+  <!-- robot_to_base -->
+  <node pkg="comm_data_reporter"
+        type="bundle_data_receiver"
+        name="bundle_data_reporter_receiver_$(arg robot_namespace)"
+        respawn="false">
+    <param name="robot_namespace" value="$(arg robot_namespace)"/>
+    <param name="common_config" value="$(arg common_config)"/>
+    <param name="master_config" value="$(arg master_config)"/>
+    <param name="topic_types" value="robot_to_base_reliable"/>
+  </node>
+
+  <!-- base_to_robot -->
+  <node pkg="comm_data_reporter"
+        type="bundle_data_sender"
+        name="bundle_data_reporter_sender_$(arg robot_namespace)"
+        respawn="false">
+    <param name="robot_namespace" value="$(arg robot_namespace)"/>
+    <param name="common_config" value="$(arg common_config)"/>
+    <param name="master_config" value="$(arg master_config)"/>
+    <param name="topic_types" value="base_to_robot_reliable"/>
+
+    <param name="ack_timeout" value="$(arg ack_timeout)"/>
+    <param name="publish_queue_status" value="true"/>
+    <param name="comm_queue_topic" value="/$(arg robot_namespace)/comm_queue/base_to_robot_status"/>
+  </node>
+
+
+  <!-- Hack to use programatic loop in roslaunch -->
+  <arg name="remaining_robot_list" value="$(eval ' '.join(robot_list.split()[1:]))"/>
+  <include if="$(eval bool(remaining_robot_list))"
+           file="$(find ros2_bridge)/launch/include/base_data_reporter.launch">
+    <arg name="robot_list" value="$(arg remaining_robot_list)"/>
+    <arg name="common_config" value="$(arg common_config)"/>
+    <arg name="master_config" value="$(arg master_config)"/>
+  </include>
+
+</launch>

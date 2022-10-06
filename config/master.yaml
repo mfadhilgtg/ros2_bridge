@@ -1,0 +1,148 @@
+# Change this file, and execute
+#   $ rosrun ros2_bridge generate_config.sh
+
+robot_to_base:
+  topics:
+    /_ROBOT_/diagnostics_agg:
+      type: diagnostic_msgs/DiagnosticArray
+    /_ROBOT_/lamp/lamp_pose:
+      type: geometry_msgs/PoseStamped
+      rate: 1
+    /_ROBOT_/mission/status:
+      type: mission_msgs/MissionStatus
+    /_ROBOT_/mission/state:
+      type: mission_msgs/MissionState
+    /_ROBOT_/move_base/current_goal:
+      type: geometry_msgs/PoseStamped
+      rate: 1
+    /_ROBOT_/move_base_planner/costmap/viz/costmap:
+      type: nav_msgs/OccupancyGrid
+      rate: 0.5
+      bandwidth: 1500
+    /_ROBOT_/telemetry/image/compressed:
+      type: sensor_msgs/CompressedImage
+      rate: 1
+    /_ROBOT_/telemetry/joint_states:
+      type: sensor_msgs/JointState
+      rate: 1
+    /_ROBOT_/tf:
+      type: tf2_msgs/TFMessage
+    /_ROBOT_/copilot/communicator/dialogue_request:
+      type: copilot_msgs/DialogueRequest
+    /_ROBOT_/vehicle_status:
+      type: core_msgs/VehicleStatus
+    /_ROBOT_/mobility_status:
+      type: core_msgs/MobilityStatus
+    /_ROBOT_/spot_driver/active_mode:  # TODO: Move this to spot only
+      type: std_msgs/String
+      rate: 1
+  publisher: robot
+  subscriber: base
+  qos: default
+
+robot_to_base_debug:
+  topics:
+    /_ROBOT_/move_base/GlobalPlanner/plan:
+      type: nav_msgs/Path
+      rate: 0.5
+    /_ROBOT_/move_base/MPCPlannerROS/body_marker_traj:
+      type: visualization_msgs/MarkerArray
+      rate: 1
+    /_ROBOT_/graph_level_planner_node/current_goal_marker:
+      type: visualization_msgs/Marker
+      rate: 1
+    /_ROBOT_/roadmap_local/marker:
+      type: visualization_msgs/MarkerArray
+      rate: 0.1
+    /_ROBOT_/mobility_manager/current_path:
+      type: nav_msgs/Path
+      rate: 0.5
+    /_ROBOT_/map_level_planner_node/refined_path:
+      type: nav_msgs/Path
+      rate: 0.5
+  publisher: robot
+  subscriber: base
+  qos: default
+  
+robot_to_base_reliable:
+  topics:
+    /_ROBOT_/roadmap/update_base:
+      type: roadmap_msgs/Roadmap
+    /_ROBOT_/artifact:
+      type: artifact_msgs/Artifact
+    /_ROBOT_/lamp/keyed_scans:
+      type: pose_graph_msgs/KeyedScan
+    /_ROBOT_/lamp/pose_graph_incremental:
+      type: pose_graph_msgs/PoseGraph
+    /_ROBOT_/uwb_frontend/range_measurements:
+      type: pose_graph_msgs/PoseGraph
+    /_ROBOT_/wifi_rssi/keyed_value:
+      type: artifact_msgs/KeyValueID
+    /_ROBOT_/bt_rssi/keyed_value:
+      type: artifact_msgs/KeyValueID
+    /_ROBOT_/audio_rssi/keyed_value:
+      type: pose_graph_msgs/KeyValue
+    /_ROBOT_/co2/keyed_value:
+      type: artifact_msgs/KeyValueID
+  publisher: robot
+  subscriber: base
+  qos: reliable
+
+inter_robot:
+  topics:
+    /_OTHER_ROBOTS_/lamp/pose_merged:
+      type: geometry_msgs/PoseStamped
+      rate: 1
+  publisher: robot
+  subscriber: robot
+  qos: default
+
+base_to_robot:
+  topics:
+    /_BASE_/comm_node_manager/status_agg:
+      type: core_msgs/CommNodeStatus
+    /_BASE_/mission/state:
+      type: mission_msgs/BaseMissionState
+    /_ROBOT_/mission/command:
+      type: mission_msgs/MissionCommand
+    /_ROBOT_/cmd_vel:
+      type: geometry_msgs/Twist
+      rate: 10
+    /_ROBOT_/move_base_simple/goal:
+      type: geometry_msgs/PoseStamped
+    /_ROBOT_/mission/heartbeat:
+      type: core_msgs/HeartBeat
+      rate: 1
+    /_ROBOT_/mission/follow_robot:
+      type: std_msgs/String
+  publisher: base
+  subscriber: robot
+  qos: default
+
+base_to_robot_reliable:
+  topics:
+    /_ROBOT_/roadmap/update:
+      type: roadmap_msgs/Roadmap
+    /_ROBOT_/lamp/base_pose_graph_diff:
+      type: pose_graph_msgs/PoseGraph
+  publisher: base
+  subscriber: robot
+  qos: reliable
+
+base_to_telemax:
+  topics:
+    /_ROBOT_/max_driver/fptp:
+      type: hw_msgs/Fptp
+  publisher: base
+  subscriber: telemax
+  qos: default
+
+base_to_spot:
+  topics:
+    /_ROBOT_/spot_driver/mode:
+      type: std_msgs/String
+    /_ROBOT_/spot_driver/tilt:
+      type: geometry_msgs/PoseStamped
+  publisher: base
+  subscriber: spot
+  qos: default

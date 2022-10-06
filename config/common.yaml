@@ -1,0 +1,80 @@
+# From https://fast-dds.docs.eprosima.com/en/latest/fastdds/dds_layer/core/policy/standardQosPolicies.html
+
+# VOLATILE_DURABILITY_QOS: Past samples are ignored and a joining
+#  DataReader receives samples generated after the moment it matches
+
+# TRANSIENT_LOCAL_DURABILITY_QOS: When a new DataReader joins, its
+#  History is filled with past samples.
+
+# BEST_EFFORT_RELIABILITY_QOS: It indicates that it is acceptable not
+#  to retransmit the missing samples, so the messages are sent without
+#  waiting for an arrival confirmation. Presumably new values for the
+#  samples are generated often enough that it is not necessary to
+#  re-send any sample. However, the data samples sent by the same
+#  DataWriter will be stored in the DataReader history in the same
+#  order they occur. In other words, even if the DataReader misses some
+#  data samples, an older value will never overwrite a newer value.
+
+# RELIABLE_RELIABILITY_QOS: It indicates that the service will attempt
+#  to deliver all samples of the DataWriter’s history expecting an
+#  arrival confirmation from the DataReader. The data samples sent by
+#  the same DataWriter cannot be made available to the DataReader if
+#  there are previous samples that have not been received yet. The
+#  service will retransmit the lost data samples in order to
+#  reconstruct a correct snapshot of the DataWriter history before it
+#  is accessible by the DataReader.
+
+
+ros_bridge_subt:
+  ros__parameters:
+    robots:
+      - husky1
+      - husky2
+      - husky3
+      - husky4
+      - xmaxx1
+      - spot1
+      - spot2
+      - spot3
+      - spot4
+    substitutions:
+      base:
+        - base1
+      # all_robots: <all robots in the list>
+      # other_robots: <robots except me>
+    topics_1_to_2:
+      default:
+        # topic_names: []
+        ros1_type_name: sensor_msgs/CompressedImage
+        ros2_type_name: sensor_msgs/msg/CompressedImage
+        history: KEEP_LAST
+        durability: VOLATILE
+        reliability: BEST_EFFORT
+        queue_size: 1
+        lifespan: 0.0
+      reliable:
+        # topic_names: []
+        ros1_type_name: sensor_msgs/CompressedImage
+        ros2_type_name: sensor_msgs/msg/CompressedImage
+        history: KEEP_ALL
+        durability: TRANSIENT_LOCAL
+        reliability: RELIABLE
+        queue_size: 4000 # Used only in ROS2, ignored with KEEP_ALL. ROS1 queue size is always 4000
+        # lifespan: 0.0 #Should be infinite
+    topics_2_to_1:
+      default:
+        # topic_names: []
+        ros1_type_name: sensor_msgs/CompressedImage
+        ros2_type_name: sensor_msgs/msg/CompressedImage
+        history: KEEP_LAST
+        durability: VOLATILE
+        reliability: BEST_EFFORT
+        queue_size: 1
+      reliable:
+        # topic_names: []
+        ros1_type_name: sensor_msgs/CompressedImage
+        ros2_type_name: sensor_msgs/msg/CompressedImage
+        history: KEEP_ALL
+        durability: TRANSIENT_LOCAL
+        reliability: RELIABLE
+        queue_size: 4000 # Used only in ROS2, ignored with KEEP_ALL. ROS1 queue size is always 4000
